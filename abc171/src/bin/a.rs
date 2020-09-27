@@ -7,5 +7,13 @@ const MOD: i128 = 100_000_007;
 
 #[fastout]
 fn main() {
-    unimplemented!();
+    input!{
+        c : char
+    }
+    let ans = if c.is_uppercase() {
+        "A"
+    } else {
+        "a"
+    };
+    println!{"{}", ans};
 }

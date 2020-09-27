@@ -7,5 +7,12 @@ const MOD: i128 = 100_000_007;
 
 #[fastout]
 fn main() {
-    unimplemented!();
+    input!{
+        n :usize,
+        k :usize,
+        mut fluits : [i32;n]
+    }
+    fluits.sort();
+    let ans = fluits.iter().take(k).sum::<i32>();
+    println!{"{}",ans};
 }
