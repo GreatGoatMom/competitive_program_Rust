@@ -7,5 +7,17 @@ const MOD: i128 = 100_000_007;
 
 #[fastout]
 fn main() {
-    unimplemented!();
+    input!{
+        a : i32
+    }
+    let div = a % 1000;
+    let ans = if div == 0 {
+        0
+    } else {
+        1000 - div
+    };
+    println!{
+        "{}",
+        ans
+    };
 }
