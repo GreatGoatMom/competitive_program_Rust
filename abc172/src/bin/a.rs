@@ -7,5 +7,6 @@ const MOD: i128 = 100_000_007;
 
 #[fastout]
 fn main() {
-    unimplemented!();
+    input!{a:i32}
+    println!{"{}", a + a.pow(2) + a.pow(3)}
 }
