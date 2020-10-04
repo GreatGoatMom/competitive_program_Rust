@@ -24,6 +24,7 @@ fn main() {
     if deg > 180. {
         deg = 360. - deg;
     }
-    let ans = a * a + b * b - 2. * a * b * ((deg as f64).to_radians()).cos();
+    let p = f64::consts::PI;  
+    let ans = a * a + b * b - 2. * a * b * ((deg / 180.0 * p)).cos();
     println!("{}",ans.sqrt());
 }
