@@ -6,17 +6,16 @@ const MOD: i128 = 100_000_007;
 #[fastout]
 fn main() {
     input!{
-        n : i64
+        n : usize
     }
     let mut ans = 0;
-    let limit = n + 1;
-    for i in 1..limit {
-        let dev = if n % i == 0 {
-            n / i - 1
-        } else {
-            n / i 
-        };
-        ans += dev;
+    for i in 1..n+1{
+        let dev = n / i;
+        for j in 1..=dev {
+            if i * j != n {
+                ans += 1;
+            }
+        }
     }
     println!("{}",ans);
 }
