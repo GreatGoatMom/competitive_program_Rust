@@ -6,24 +6,28 @@ const MOD: i128 = 100_000_007;
 #[fastout]
 fn main() {
     input!{
-        n :i8,
-        numList : [(i8,i8); n],
+        n : usize,
+        list : [(usize,usize); n]
     }
-    let mut ans = 0;
-    let mut tmp = 0;
-    for num in numList {
-        if num.0 == num.1 {
-            tmp += 1;
+    let mut cnt = 0;
+    let mut serial_cnt = false;
+    for l in list {
+        if l.0 == l.1  {
+            cnt += 1;
         } else {
-            ans = cmp::max(ans,tmp);
-            tmp = 0;
+            cnt = 0;
+        }
+        if cnt >= 3 {
+            serial_cnt = true;
         }
     }
-    ans = cmp::max(ans,tmp);
-    let ansStr = if ans >= 3 {
+    let ans = if serial_cnt {
         "Yes"
     } else {
         "No"
     };
-    println!("{}",ansStr);
+    println!(
+        "{}",
+        ans
+    );
 }
