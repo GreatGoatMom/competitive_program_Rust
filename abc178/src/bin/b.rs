@@ -4,14 +4,12 @@ use std::*;
 #[fastout]
 fn main() {
     input!{
-        a : i128,
-        b : i128,
-        c : i128,
-        d : i128
+        a : isize,
+        b : isize,
+        c : isize,
+        d : isize
     }
-    let mut ans = a*c;
-    ans = cmp::max(ans,a*d);
-    ans = cmp::max(ans, b*c);
-    ans = cmp::max(ans, b*d);
+    let vec = vec![a*c,a*d,b*c,b*d];
+    let ans = vec.iter().max().unwrap();
     println!("{}",ans);
 }
