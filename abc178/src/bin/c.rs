@@ -1,26 +1,23 @@
 use proconio::*;
 use std::*;
 
-const MOD: i128 = 1_000_000_007;
+const MOD: isize = 1_000_000_007;
 
 fn main() {
-    input! {
-        n : i128
+    input!{
+        n :isize
     }
-    if n <= 1 {
-        println!{"{}",0};
-    } else if n == 2 {
-        println!{"{}",2};
-    } else {
-        let mut all=1i128;
-        let mut nine=1i128;
-        let mut eight=1i128;
-        for _ in 0..n {
-            all = all * 10 % MOD;
-            nine = nine * 9 % MOD;
-            eight = eight * 8 % MOD;
-        }
-        let mut ans : i128 = (all - (nine * 2) % MOD + eight) % MOD;
-        println!{"{}",(ans+MOD)%MOD};
+    let mut all = 1;
+    let mut cnt_exclude_one = 1;
+    let mut cnt_exclude_two = 1;
+    for i in 0..n {
+        all *= 10;
+        cnt_exclude_one *= 9;
+        cnt_exclude_two *= 8;
+        all %= MOD;
+        cnt_exclude_one %= MOD;
+        cnt_exclude_two %= MOD;
     }
+    let ans : isize = (all + cnt_exclude_two - (cnt_exclude_one * 2) % MOD) % MOD;
+    println!("{}",(ans+MOD)%MOD);
 }
