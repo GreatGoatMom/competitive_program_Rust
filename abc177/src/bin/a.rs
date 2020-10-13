@@ -5,14 +5,15 @@ const MOD: i128 = 100_000_007;
 
 #[fastout]
 fn main() {
-    input! {
-        a : i32,
-        b : i32,
-        c : i32
+    input!{
+        a : usize,
+        b : usize,
+        c : usize
     }
-    if b * c >= a {
-        println!{"Yes"};
+    let ans = if b * c >= a {
+        "Yes"
     } else {
-        println!{"No"};
-    }
+        "No"
+    };
+    println!("{}",ans);
 }
