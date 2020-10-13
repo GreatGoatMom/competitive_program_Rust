@@ -6,17 +6,17 @@ const MOD: i128 = 100_000_007;
 
 #[fastout]
 fn main() {
-    input! {
-        s : Chars
+    input!{
+        n : Chars
     }
     let mut ans = 0;
-    for ind in 0..s.len() {
-        ans += s[ind] as i32 - 48;
+    for i in 0..n.len() {
+        ans += n[i] as usize - '0' as usize;
+        ans %= 9;
     }
-    let ansStr = if ans % 9 == 0 {
-        "Yes"
+    if ans == 0 {
+        println!("Yes");
     } else {
-        "No"
-    };
-    println!("{}",ansStr);
+        println!("No");
+    }
 }
