@@ -6,14 +6,13 @@ const MOD: i128 = 100_000_007;
 #[fastout]
 fn main() {
     input!{
-        n :i32,
-        x :i32,
-        t :i32,
+        n : usize,
+        x : usize,
+        t : usize
     }
-    let mut divCnt = n / x;
+    let mut ans = n / x;
     if n % x != 0 {
-        divCnt += 1;
+        ans += 1;
     }
-    let ans = divCnt * t;
-    println!("{}",ans);
+    println!("{}",ans*t);
 }
