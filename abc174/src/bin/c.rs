@@ -7,23 +7,19 @@ const MOD: i128 = 100_000_007;
 
 fn main() {
     input!{
-        x : usize
+        k : usize
     }
-    let mut vec : Vec<bool> = vec![false;x+1];
-    let mut cnt = 0;
-    let mut ten_cnt = 10;
+    let mut list = vec![false;k+1];
+    let mut ans = 0;
     let mut div = 0;
-    loop {
-        cnt += 1;
-        div = (7 + div * ten_cnt) % x;
+    for i in 0..k {
+        ans += 1;
+        div = div * 10 + 7 ;
+        div %= k;
         if div == 0 {
-            println!("{}",cnt);
-            process::exit(0);
+            println!("{}",ans);
+            return
         }
-        if vec[div]{
-            break;
-        }
-        vec[div] = true;
     }
     println!("-1");
 }
