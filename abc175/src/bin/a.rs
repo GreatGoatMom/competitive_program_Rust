@@ -6,14 +6,14 @@ const MOD: i128 = 100_000_007;
 
 #[fastout]
 fn main() {
-    input! {
+    input!{
         s : Chars
     }
     let mut ans = 0;
     let mut tmp = 0;
-    for ind in 0..s.len() {
-        if s[ind] == 'R'{
-            tmp+=1;
+    for i in 0..3 {
+        if s[i] == 'R' {
+            tmp += 1;
         } else {
             ans = cmp::max(ans,tmp);
             tmp = 0;
