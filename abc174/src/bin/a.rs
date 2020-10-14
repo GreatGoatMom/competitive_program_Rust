@@ -8,13 +8,13 @@ const MOD: i128 = 100_000_007;
 #[fastout]
 fn main() {
     input!{
-        temp: i32
+        t : isize
     }
-    let mut ans;
-    ans = if temp >= 30 {
-        "Yes"
+    let mut ans ;
+    if t >= 30 {
+        ans = "Yes";
     } else {
-        "No"
-    };
-    println!{"{}", ans};
+        ans = "No";
+    }
+    println!("{}",ans);
 }
