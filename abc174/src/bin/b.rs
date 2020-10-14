@@ -8,18 +8,16 @@ const MOD: i128 = 100_000_007;
 #[fastout]
 fn main() {
     input!{
-        n :i32,
-        d :f64,
-        numList : [[i64; 2];n]
+        n : usize,
+        d : usize,
+        list : [(isize,isize);n]
     }
     let mut ans = 0;
-    for itm in numList {
-        let a = itm[0] * itm[0];
-        let b = itm[1] * itm[1];
-        let c = (a+b) as f64;
-        if c.sqrt() <= d {
+    for i in 0..n {
+        let tmp = ((list[i].0*list[i].0 + list[i].1*list[i].1) as f64).sqrt();
+        if tmp <= d as f64 {
             ans += 1;
         }
     }
-    println!{"{}", ans};
+    println!("{}",ans);
 }
