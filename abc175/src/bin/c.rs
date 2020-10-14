@@ -7,20 +7,22 @@ const MOD: i128 = 100_000_007;
 fn main() {
     input!{
         mut x : i128,
-        k : i128,
-        d : i128
+        mut k : i128,
+        mut d : i128
     }
     x = x.abs();
+    k = k.abs();
+    d = d.abs();
     let mut ans = 0;
-    if x - k * d > 0 {
-        ans = x - k * d;
+    if x > k * d {
+        ans = x - (k * d);
     } else {
-        let just_before = x / d;
-        if (k - just_before) % 2 == 0 {
-            ans = x % d;
+        let left = x / d ;
+        if (k - left) % 2 == 0 {
+            ans = x - (d * left);
         } else {
-            ans = (x - (d * just_before)) - d;
+            ans = d - x % d;
         }
     }
-    println!("{}",ans.abs());
+    println!("{}",ans);
 }
