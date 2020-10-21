@@ -12,15 +12,14 @@ fn main() {
         mut x : u128,
         y : u128,
         a : u128,
-        b : u128,
+        b : u128
     }
-    let mut ans : u128 = y / b;
-    let mut cnt : u128 = 1;
-    while a.overflowing_  ((a * x) as u128) < y {
-        let tmpcnt : u128 = (y - (a * x)) / b;
-        ans = cmp::max(ans, tmpcnt + cnt);
-        cnt += 1;
+    let mut ans = 0;
+    let mut tmp = 0;
+    while x * a < y && x * a < x + b {
+        tmp += 1;
         x *= a;
     }
+    ans = tmp + ((y-x-1)/ b);
     println!{"{}",ans};
 }
